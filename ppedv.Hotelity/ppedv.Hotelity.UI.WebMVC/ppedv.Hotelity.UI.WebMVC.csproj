@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ppedv.Hotelity.Data.EfCore\ppedv.Hotelity.Data.EfCore.csproj" />
+    <ProjectReference Include="..\ppedv.Hotelity.Logic\ppedv.Hotelity.Logic.csproj" />
+    <ProjectReference Include="..\ppedv.Hotelity.Model\ppedv.Hotelity.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.7" />
+  </ItemGroup>
+
+</Project>

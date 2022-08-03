@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.UI.DevConsol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.Logic.Tests", "ppedv.Hotelity.Logic.Tests\ppedv.Hotelity.Logic.Tests.csproj", "{A4121D6D-EF37-4E31-A6D0-0D98A9DCF203}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.UI.WebMVC", "ppedv.Hotelity.UI.WebMVC\ppedv.Hotelity.UI.WebMVC.csproj", "{1002C717-2B03-4B1A-931F-1208860D9673}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A4121D6D-EF37-4E31-A6D0-0D98A9DCF203}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4121D6D-EF37-4E31-A6D0-0D98A9DCF203}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4121D6D-EF37-4E31-A6D0-0D98A9DCF203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1002C717-2B03-4B1A-931F-1208860D9673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1002C717-2B03-4B1A-931F-1208860D9673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1002C717-2B03-4B1A-931F-1208860D9673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1002C717-2B03-4B1A-931F-1208860D9673}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
