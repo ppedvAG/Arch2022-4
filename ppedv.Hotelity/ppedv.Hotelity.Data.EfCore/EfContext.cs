@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ppedv.Hotelity.Model;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("ppedv.Hotelity.Data.EfCore.Tests")]
 
 namespace ppedv.Hotelity.Data.EfCore
 {
-    public class EfContext : DbContext
+    internal class EfContext : DbContext
     {
         private readonly string conString;
 
