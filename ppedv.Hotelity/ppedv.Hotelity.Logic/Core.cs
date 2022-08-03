@@ -15,7 +15,8 @@ namespace ppedv.Hotelity.Logic
 
         public IEnumerable<Zimmer> GetAvailableRooms(DateTime day)
         {
-            return Repository.GetAll<Zimmer>().Where(x => x.Buchung.Any(y => y.Buchungsdatum.Value.Date != day));
+            return Repository.GetAll<Zimmer>().Where(x => x.Buchung.Count == 0 || 
+                                                          x.Buchung.Any(y => y.Buchungsdatum.Value.Date != day.Date));
         }
 
     }
