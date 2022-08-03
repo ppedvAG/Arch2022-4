@@ -1,5 +1,4 @@
-﻿using ppedv.Hotelity.Data.EfCore;
-using ppedv.Hotelity.Model;
+﻿using ppedv.Hotelity.Model;
 using ppedv.Hotelity.Model.Contracts;
 
 namespace ppedv.Hotelity.Logic
