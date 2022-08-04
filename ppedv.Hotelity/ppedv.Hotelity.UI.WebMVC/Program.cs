@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IRepository, EfRepository>();
+builder.Services.AddScoped<IUnitOfWork, EfUnitOfWork>();
 //builder.Host.UseSerilog();
 Logger.Log.Information("ASP MVC Started");
 

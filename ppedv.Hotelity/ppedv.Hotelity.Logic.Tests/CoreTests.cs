@@ -10,7 +10,7 @@ namespace ppedv.Hotelity.Logic.Tests
         [Fact]
         public void GetAvailableRooms_3_rooms_1_is_booked_results_2_rooms()
         {
-            var core = new Core(new TestRepo());
+            var core = new Core(new TestUnitOfWork());
 
             var result = core.GetAvailableRooms(DateTime.Now);
 
@@ -20,8 +20,8 @@ namespace ppedv.Hotelity.Logic.Tests
         [Fact]
         public void GetAvailableRooms_3_rooms_1_is_booked_results_2_rooms_moq()
         {
-            var mock = new Mock<IRepository>();
-            mock.Setup(x => x.Query<Zimmer>()).Returns(() =>
+            var repoMock = new Mock<IRepository<Zimmer>>();
+            repoMock.Setup(x => x.Query()).Returns(() =>
             {
                 var r1 = new Zimmer();
                 var r2 = new Zimmer();
@@ -31,7 +31,10 @@ namespace ppedv.Hotelity.Logic.Tests
                 return new[] { r1, r2, r3 }.AsQueryable();
             });
 
-            var core = new Core(mock.Object);
+            var uowMock = new Mock<IUnitOfWork>();
+            uowMock.Setup(x => x.GetRepo<Zimmer>()).Returns(() => repoMock.Object);
+
+            var core = new Core(uowMock.Object);
 
             var result = core.GetAvailableRooms(DateTime.Now);
 

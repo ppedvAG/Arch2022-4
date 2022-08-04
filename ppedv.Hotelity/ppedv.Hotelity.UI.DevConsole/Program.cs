@@ -10,25 +10,25 @@ using System.Reflection;
 Console.WriteLine("*** Hotelity v0.1 ***");
 
 //injection per Hand
-//Core core = new Core(new ppedv.Hotelity.Data.EfCore.EfRepository());
+//Core core = new Core(new ppedv.Hotelity.Data.EfCore.EfUnitOfWork());
 
 //Injection per Reflection
 //var path = @"C:\Users\Fred\source\repos\Arch2022-4\ppedv.Hotelity\ppedv.Hotelity.Data.EfCore\bin\Debug\net6.0\ppedv.Hotelity.Data.EfCore.dll";
 //var ass = Assembly.LoadFrom(path);
-//var efRepoType = ass.GetTypes().FirstOrDefault(x => x.GetInterfaces().Contains(typeof(IRepository)));
-//var repo = (IRepository)Activator.CreateInstance(efRepoType);
+//var efUoWType = ass.GetTypes().FirstOrDefault(x => x.GetInterfaces().Contains(typeof(IUnitOfWork)));
+//var repo = (IUnitOfWork)Activator.CreateInstance(efUoWType);
 //Core core = new Core(repo);
 
 //Injection per AutoFac
 var builder = new ContainerBuilder();
-builder.RegisterType<EfRepository>().As<IRepository>();
+builder.RegisterType<EfUnitOfWork>().As<IUnitOfWork>();
 var container = builder.Build();
 
-Core core = new Core(container.Resolve<IRepository>());
+Core core = new Core(container.Resolve<IUnitOfWork>());
 
 Logger.Log.Information("Console gestartet");
 
-foreach (var zimmer in core.Repository.Query<Zimmer>().Where(x => x.Nummer > 4)
+foreach (var zimmer in core.UnitOfWork.GetRepo<Zimmer>().Query().Where(x => x.Nummer > 4)
                                                        .OrderBy(x => x.Nummer)
                                                        .ThenByDescending(x => x.AnzBetten))
 {

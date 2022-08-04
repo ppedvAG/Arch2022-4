@@ -1,12 +1,18 @@
 ﻿namespace ppedv.Hotelity.Model.Contracts
 {
-    public interface IRepository
+    public interface IRepository<T> where T : Entity
     {
-        IQueryable<T> Query<T>() where T : Entity;
-        T GetId<T>(int id) where T : Entity;
-        void Add<T>(T entity) where T : Entity;
-        void Update<T>(T entity) where T : Entity;
-        void Delete<T>(T entity) where T : Entity;
+        IQueryable<T> Query();
+        T GetId(int id);
+        void Add(T entity);
+        void Update(T entity);
+        void Delete(T entity);
+
+    }
+
+    public interface IUnitOfWork
+    {
+        IRepository<T> GetRepo<T>() where T : Entity;
 
         void SaveAll();
     }

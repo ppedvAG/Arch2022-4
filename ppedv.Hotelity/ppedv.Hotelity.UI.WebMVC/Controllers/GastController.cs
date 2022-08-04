@@ -10,21 +10,21 @@ namespace ppedv.Hotelity.UI.WebMVC.Controllers
     {
         Core _core;
 
-        public GastController(IRepository repo)
+        public GastController(IUnitOfWork uow)
         {
-            _core = new Core(repo);
+            _core = new Core(uow);
         }
 
         // GET: GastController
         public ActionResult Index()
         {
-            return View(_core.Repository.Query<Gast>());
+            return View(_core.UnitOfWork.GetRepo<Gast>().Query());
         }
 
         // GET: GastController/Details/5
         public ActionResult Details(int id)
         {
-            return View(_core.Repository.GetId<Gast>(id));
+            return View(_core.UnitOfWork.GetRepo<Gast>().GetId(id));
         }
 
         // GET: GastController/Create
@@ -40,8 +40,8 @@ namespace ppedv.Hotelity.UI.WebMVC.Controllers
         {
             try
             {
-                _core.Repository.Add(gast);
-                _core.Repository.SaveAll();
+                _core.UnitOfWork.GetRepo<Gast>().Add(gast);
+                _core.UnitOfWork.SaveAll();
 
                 return RedirectToAction(nameof(Index));
             }
@@ -54,7 +54,7 @@ namespace ppedv.Hotelity.UI.WebMVC.Controllers
         // GET: GastController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(_core.Repository.GetId<Gast>(id));
+            return View(_core.UnitOfWork.GetRepo<Gast>().GetId(id));
         }
 
         // POST: GastController/Edit/5
@@ -64,8 +64,8 @@ namespace ppedv.Hotelity.UI.WebMVC.Controllers
         {
             try
             {
-                _core.Repository.Update(gast);
-                _core.Repository.SaveAll();
+                _core.UnitOfWork.GetRepo<Gast>().Update(gast);
+                _core.UnitOfWork.SaveAll();
 
                 return RedirectToAction(nameof(Index));
             }
@@ -78,7 +78,7 @@ namespace ppedv.Hotelity.UI.WebMVC.Controllers
         // GET: GastController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View(_core.Repository.GetId<Gast>(id));
+            return View(_core.UnitOfWork.GetRepo<Gast>().GetId(id));
         }
 
         // POST: GastController/Delete/5
@@ -88,8 +88,8 @@ namespace ppedv.Hotelity.UI.WebMVC.Controllers
         {
             try
             {
-                _core.Repository.Delete(gast);
-                _core.Repository.SaveAll();
+                _core.UnitOfWork.GetRepo<Gast>().Delete(gast);
+                _core.UnitOfWork.SaveAll();
 
                 return RedirectToAction(nameof(Index));
             }

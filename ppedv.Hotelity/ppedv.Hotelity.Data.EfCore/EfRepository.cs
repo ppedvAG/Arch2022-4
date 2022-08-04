@@ -4,38 +4,51 @@ using ppedv.Hotelity.Model.Contracts;
 
 namespace ppedv.Hotelity.Data.EfCore
 {
-    public class EfRepository : IRepository
+    public class EfUnitOfWork : IUnitOfWork
     {
         EfContext _context = new EfContext();
 
-        public void Add<T>(T entity) where T : Entity
+        public IRepository<T> GetRepo<T>() where T : Entity
         {
-            //if(typeof(T) == typeof(Zimmer))
-            //    _context.Zimmer.Add(entity as Zimmer);   
-            _context.Add(entity);
-        }
-
-        public void Delete<T>(T entity) where T : Entity
-        {
-            _context.Remove(entity);
-        }
-
-        public IQueryable<T> Query<T>() where T : Entity
-        {
-            return _context.Set<T>();
-        }
-
-        public T GetId<T>(int id) where T : Entity
-        {
-            return _context.Set<T>().Find(id);
+            return new EfRepository<T>(_context);
         }
 
         public void SaveAll()
         {
             _context.SaveChanges();
         }
+    }
 
-        public void Update<T>(T entity) where T : Entity
+    public class EfRepository<T> : IRepository<T> where T : Entity
+    {
+        private protected EfContext _context;
+
+        internal EfRepository(EfContext context)
+        {
+            _context = context;
+        }
+
+        public void Add(T entity)
+        {
+            _context.Add(entity);
+        }
+
+        public void Delete(T entity)
+        {
+            _context.Remove(entity);
+        }
+
+        public T GetId(int id)
+        {
+            return _context.Set<T>().Find(id);
+        }
+
+        public IQueryable<T> Query()
+        {
+            return _context.Set<T>();
+        }
+
+        public void Update(T entity)
         {
             _context.Update(entity);
         }

@@ -6,17 +6,17 @@ namespace ppedv.Hotelity.Logic
     public class Core
     {
 
-        public IRepository Repository { get; private set; }
+        public IUnitOfWork UnitOfWork { get; private set; }
 
-        public Core(IRepository repository)
+        public Core(IUnitOfWork unitOfWork  )
         {
-            Repository = repository;
+            UnitOfWork = unitOfWork;
         }
 
         public IEnumerable<Zimmer> GetAvailableRooms(DateTime day)
         {
-            return Repository.Query<Zimmer>().Where(x => x.Buchung.Count == 0 || 
-                                                          x.Buchung.Any(y => y.Buchungsdatum.Value.Date != day.Date));
+            return UnitOfWork.GetRepo<Zimmer>().Query().Where(x => x.Buchung.Count == 0 || 
+                                                                   x.Buchung.Any(y => y.Buchungsdatum.Value.Date != day.Date));
         }
 
     }

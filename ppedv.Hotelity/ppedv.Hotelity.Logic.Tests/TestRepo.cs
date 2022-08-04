@@ -1,39 +1,17 @@
-﻿using ppedv.Hotelity.Model;
+﻿using FluentAssertions;
+using ppedv.Hotelity.Model;
 using ppedv.Hotelity.Model.Contracts;
 
 namespace ppedv.Hotelity.Logic.Tests
 {
-    public class TestRepo : IRepository
-    {
 
-        public IQueryable<T> Query<T>() where T : Entity
+    public class TestUnitOfWork : IUnitOfWork
+    {
+        public IRepository<T> GetRepo<T>() where T : Entity
         {
             if (typeof(T) == typeof(Zimmer))
-            {
-                var r1 = new Zimmer();
-                var r2 = new Zimmer();
-                var r3 = new Zimmer();
+                return new TestRepo() as IRepository<T>;
 
-                r2.Buchung.Add(new Buchung() { Buchungsdatum = DateTime.Now });
-                return new[] { r1, r2, r3 }.Cast<T>().AsQueryable();
-            }
-            throw new NotImplementedException();
-        }
-
-
-        public void Add<T>(T entity) where T : Entity
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete<T>(T entity) where T : Entity
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public T GetId<T>(int id) where T : Entity
-        {
             throw new NotImplementedException();
         }
 
@@ -41,8 +19,38 @@ namespace ppedv.Hotelity.Logic.Tests
         {
             throw new NotImplementedException();
         }
+    }
 
-        public void Update<T>(T entity) where T : Entity
+    public class TestRepo : IRepository<Zimmer>
+    {
+        public IQueryable<Zimmer> Query()
+        {
+            var r1 = new Zimmer();
+            var r2 = new Zimmer();
+            var r3 = new Zimmer();
+
+            r2.Buchung.Add(new Buchung() { Buchungsdatum = DateTime.Now });
+            return new[] { r1, r2, r3 }.AsQueryable();
+        }
+
+        public void Add(Zimmer entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Zimmer entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Zimmer GetId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+        public void Update(Zimmer entity)
         {
             throw new NotImplementedException();
         }
