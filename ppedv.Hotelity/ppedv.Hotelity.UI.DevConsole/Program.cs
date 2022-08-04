@@ -26,23 +26,27 @@ var container = builder.Build();
 
 Core core = new Core(container.Resolve<IRepository>());
 
+Logger.Log.Information("Console gestartet");
 
-Logger.Log.Warning("Console gestartet auf {MachineName}", Environment.MachineName);
-
-try
-{
-    throw new OutOfMemoryException();
-}
-catch (Exception ex)
-{
-
-    Logger.Log.Fatal(ex,"Schade");
-    Serilog.Log.CloseAndFlush();
-}
-
-foreach (var zimmer in core.Repository.GetAll<Zimmer>())
+foreach (var zimmer in core.Repository.Query<Zimmer>().Where(x => x.Nummer > 4)
+                                                       .OrderBy(x => x.Nummer)
+                                                       .ThenByDescending(x => x.AnzBetten))
 {
     Console.WriteLine($"Nummer: {zimmer.Nummer} Betten: {zimmer.AnzBetten}");
 
 }
+
+
+
+//try
+//{
+//    throw new OutOfMemoryException();
+//}
+//catch (Exception ex)
+//{
+
+//    Logger.Log.Fatal(ex,"Schade");
+//    Serilog.Log.CloseAndFlush();
+//}
+
 

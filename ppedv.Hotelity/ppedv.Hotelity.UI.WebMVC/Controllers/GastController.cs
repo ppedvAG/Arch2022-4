@@ -18,7 +18,7 @@ namespace ppedv.Hotelity.UI.WebMVC.Controllers
         // GET: GastController
         public ActionResult Index()
         {
-            return View(_core.Repository.GetAll<Gast>());
+            return View(_core.Repository.Query<Gast>());
         }
 
         // GET: GastController/Details/5

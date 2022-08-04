@@ -6,7 +6,7 @@ namespace ppedv.Hotelity.Logic.Tests
     public class TestRepo : IRepository
     {
 
-        public IEnumerable<T> GetAll<T>() where T : Entity
+        public IQueryable<T> Query<T>() where T : Entity
         {
             if (typeof(T) == typeof(Zimmer))
             {
@@ -15,7 +15,7 @@ namespace ppedv.Hotelity.Logic.Tests
                 var r3 = new Zimmer();
 
                 r2.Buchung.Add(new Buchung() { Buchungsdatum = DateTime.Now });
-                return new[] { r1, r2, r3 }.Cast<T>();
+                return new[] { r1, r2, r3 }.Cast<T>().AsQueryable();
             }
             throw new NotImplementedException();
         }

@@ -21,14 +21,14 @@ namespace ppedv.Hotelity.Logic.Tests
         public void GetAvailableRooms_3_rooms_1_is_booked_results_2_rooms_moq()
         {
             var mock = new Mock<IRepository>();
-            mock.Setup(x => x.GetAll<Zimmer>()).Returns(() =>
+            mock.Setup(x => x.Query<Zimmer>()).Returns(() =>
             {
                 var r1 = new Zimmer();
                 var r2 = new Zimmer();
                 var r3 = new Zimmer();
 
                 r2.Buchung.Add(new Buchung() { Buchungsdatum = DateTime.Now });
-                return new[] { r1, r2, r3 };
+                return new[] { r1, r2, r3 }.AsQueryable();
             });
 
             var core = new Core(mock.Object);
