@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ppedv.Hotelity.Model;
+using ppedv.Hotelity.Model.DomainModel;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("ppedv.Hotelity.Data.EfCore.Tests")]

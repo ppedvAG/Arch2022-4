@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Moq;
-using ppedv.Hotelity.Model;
 using ppedv.Hotelity.Model.Contracts;
+using ppedv.Hotelity.Model.DomainModel;
 
 namespace ppedv.Hotelity.Logic.Tests
 {
@@ -31,7 +31,7 @@ namespace ppedv.Hotelity.Logic.Tests
                 return new[] { r1, r2, r3 }.AsQueryable();
             });
 
-            var uowMock = new Mock<IUnitOfWork>();
+            var uowMock = new Mock<IMainRepository>();
             uowMock.Setup(x => x.GetRepo<Zimmer>()).Returns(() => repoMock.Object);
 
             var core = new Core(uowMock.Object);

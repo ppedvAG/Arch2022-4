@@ -1,11 +1,11 @@
 ﻿using FluentAssertions;
-using ppedv.Hotelity.Model;
 using ppedv.Hotelity.Model.Contracts;
+using ppedv.Hotelity.Model.DomainModel;
 
 namespace ppedv.Hotelity.Logic.Tests
 {
 
-    public class TestUnitOfWork : IUnitOfWork
+    public class TestUnitOfWork : IMainRepository
     {
         public IRepository<Gast> GastRepository => throw new NotImplementedException();
 

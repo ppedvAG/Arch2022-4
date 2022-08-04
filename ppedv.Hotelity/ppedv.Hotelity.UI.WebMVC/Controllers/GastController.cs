@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ppedv.Hotelity.Logic;
-using ppedv.Hotelity.Model;
 using ppedv.Hotelity.Model.Contracts;
+using ppedv.Hotelity.Model.DomainModel;
+
 
 namespace ppedv.Hotelity.UI.WebMVC.Controllers
 {
@@ -10,7 +11,7 @@ namespace ppedv.Hotelity.UI.WebMVC.Controllers
     {
         Core _core;
 
-        public GastController(IUnitOfWork uow)
+        public GastController(IMainRepository uow)
         {
             _core = new Core(uow);
         }

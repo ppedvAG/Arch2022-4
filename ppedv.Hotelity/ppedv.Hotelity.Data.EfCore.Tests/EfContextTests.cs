@@ -1,9 +1,9 @@
 using AutoFixture;
 using AutoFixture.Kernel;
 using FluentAssertions;
-using ppedv.Hotelity.Model;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using ppedv.Hotelity.Model.DomainModel;
 
 namespace ppedv.Hotelity.Data.EfCore.Tests
 {

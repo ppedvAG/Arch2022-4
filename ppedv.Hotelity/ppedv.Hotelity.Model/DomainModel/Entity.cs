@@ -1,4 +1,4 @@
-﻿namespace ppedv.Hotelity.Model
+﻿namespace ppedv.Hotelity.Model.DomainModel
 {
     public abstract class Entity
     {

@@ -1,11 +1,8 @@
 ﻿using Autofac;
-using Autofac.Core;
 using ppedv.Hotelity.Data.EfCore;
 using ppedv.Hotelity.Logging;
 using ppedv.Hotelity.Logic;
-using ppedv.Hotelity.Model;
 using ppedv.Hotelity.Model.Contracts;
-using System.Reflection;
 
 Console.WriteLine("*** Hotelity v0.1 ***");
 
@@ -21,10 +18,10 @@ Console.WriteLine("*** Hotelity v0.1 ***");
 
 //Injection per AutoFac
 var builder = new ContainerBuilder();
-builder.RegisterType<EfUnitOfWork>().As<IUnitOfWork>();
+builder.RegisterType<EfMainRepository>().As<IMainRepository>();
 var container = builder.Build();
 
-Core core = new Core(container.Resolve<IUnitOfWork>());
+Core core = new Core(container.Resolve<IMainRepository>());
 
 Logger.Log.Information("Console gestartet");
 
