@@ -1,4 +1,5 @@
 ﻿using Serilog;
+using Serilog.Events;
 using Serilog.Exceptions;
 
 namespace ppedv.Hotelity.Logging
@@ -10,17 +11,17 @@ namespace ppedv.Hotelity.Logging
         static Logger()
         {
             Serilog.Log.Logger = new LoggerConfiguration()
+                        .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
                         .MinimumLevel.Debug()
                         .Enrich.WithExceptionDetails()
-                        .WriteTo.Debug()
+                        .Enrich.FromLogContext()
+                        .Enrich.WithProperty("User", Environment.UserName)
+                        .WriteTo.Debug(restrictedToMinimumLevel: LogEventLevel.Debug)
                         .WriteTo.File("log/log.txt", rollingInterval: RollingInterval.Month)
                         .WriteTo.Seq("http://20.4.186.69")
+
                         .CreateLogger();
         }
 
-        ~Logger()
-        {
-            Serilog.Log.CloseAndFlush();
-        }
     }
 }

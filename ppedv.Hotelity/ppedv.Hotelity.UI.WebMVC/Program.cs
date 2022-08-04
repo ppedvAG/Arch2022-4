@@ -1,11 +1,15 @@
 using ppedv.Hotelity.Data.EfCore;
+using ppedv.Hotelity.Logging;
 using ppedv.Hotelity.Model.Contracts;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRepository, EfRepository>();
+//builder.Host.UseSerilog();
+Logger.Log.Information("ASP MVC Started");
 
 var app = builder.Build();
 
@@ -16,7 +20,6 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -28,4 +31,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+//app.UseSerilogRequestLogging();
 app.Run();
