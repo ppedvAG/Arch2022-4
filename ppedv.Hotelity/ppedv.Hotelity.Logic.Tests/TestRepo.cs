@@ -7,6 +7,12 @@ namespace ppedv.Hotelity.Logic.Tests
 
     public class TestUnitOfWork : IUnitOfWork
     {
+        public IRepository<Gast> GastRepository => throw new NotImplementedException();
+
+        public IRepository<Zimmer> ZimmerRepository => throw new NotImplementedException();
+
+        public IBuchungenRepository BuchungenRepository => throw new NotImplementedException();
+
         public IRepository<T> GetRepo<T>() where T : Entity
         {
             if (typeof(T) == typeof(Zimmer))

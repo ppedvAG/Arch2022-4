@@ -28,7 +28,10 @@ Core core = new Core(container.Resolve<IUnitOfWork>());
 
 Logger.Log.Information("Console gestartet");
 
-foreach (var zimmer in core.UnitOfWork.GetRepo<Zimmer>().Query().Where(x => x.Nummer > 4)
+var result = core.UnitOfWork.BuchungenRepository.GetBuchungenByDateRange(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(7)));
+
+
+foreach (var zimmer in core.UnitOfWork.ZimmerRepository.Query().Where(x => x.Nummer > 4)
                                                        .OrderBy(x => x.Nummer)
                                                        .ThenByDescending(x => x.AnzBetten))
 {
