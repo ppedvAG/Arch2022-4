@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ppedv.Hotelity.UI.WPF.Views.BuchungenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ppedv.Hotelity.UI.WPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button>Save</Button>
+            <Button>New</Button>
+            <Button>Delete</Button>
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid/>
+
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+
+            <Grid Grid.Column="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+                <Label>Buchungsdatum</Label>
+                <DatePicker Grid.Column="1"/>
+                <Label Grid.Row="1">Von</Label>
+                <DatePicker Grid.Row="1" Grid.Column="1"/>
+                <Label Grid.Row="2">Bis</Label>
+                <DatePicker Grid.Row="2" Grid.Column="1"/>
+                <Label Grid.Row="3">Hauptgast</Label>
+                <ComboBox Grid.Row="3" Grid.Column="1"/>
+                <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Header="Zimmer">
+                    <ListBox MinHeight="60"/>
+                </GroupBox>
+                <GroupBox Grid.Row="5" Grid.ColumnSpan="2" Header="Zimmer">
+                    <ListBox MinHeight="60"/>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</UserControl>
