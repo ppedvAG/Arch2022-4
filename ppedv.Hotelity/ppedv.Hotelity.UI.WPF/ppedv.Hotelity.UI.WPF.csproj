@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ppedv.Hotelity.Data.EfCore\ppedv.Hotelity.Data.EfCore.csproj" />
     <ProjectReference Include="..\ppedv.Hotelity.Logging\ppedv.Hotelity.Logging.csproj" />
     <ProjectReference Include="..\ppedv.Hotelity.Logic\ppedv.Hotelity.Logic.csproj" />

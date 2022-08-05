@@ -13,6 +13,7 @@
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <Button Command="{Binding SaveCommand}">Save</Button>
+            <Button Command="{Binding SaveCommand2}">Save2</Button>
             <Button>New</Button>
             <Button>Delete</Button>
         </StackPanel>
