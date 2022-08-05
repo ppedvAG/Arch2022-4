@@ -4,8 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ppedv.Hotelity.UI.WPF.Views"
+             xmlns:vm="clr-namespace:ppedv.Hotelity.UI.WPF.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:BuchungenViewModel/>
+    </UserControl.DataContext>
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <Button>Save</Button>
@@ -19,7 +23,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <DataGrid/>
+            <DataGrid ItemsSource="{Binding Buchungen}"
+                      SelectedItem="{Binding SelecteBuchung}"/>
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
 
@@ -38,18 +43,20 @@
 
                 </Grid.RowDefinitions>
                 <Label>Buchungsdatum</Label>
-                <DatePicker Grid.Column="1"/>
+                <DatePicker Grid.Column="1" SelectedDate="{Binding SelecteBuchung.Buchungsdatum}"/>
                 <Label Grid.Row="1">Von</Label>
-                <DatePicker Grid.Row="1" Grid.Column="1"/>
+                <DatePicker SelectedDate="{Binding SelecteBuchung.Von}" Grid.Row="1" Grid.Column="1"/>
                 <Label Grid.Row="2">Bis</Label>
-                <DatePicker Grid.Row="2" Grid.Column="1"/>
+                <DatePicker SelectedDate="{Binding SelecteBuchung.Bis}" Grid.Row="2" Grid.Column="1"/>
                 <Label Grid.Row="3">Hauptgast</Label>
-                <ComboBox Grid.Row="3" Grid.Column="1"/>
+                <ComboBox Text="{Binding SelecteBuchung.Gast.Name}" Grid.Row="3" Grid.Column="1"/>
                 <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Header="Zimmer">
-                    <ListBox MinHeight="60"/>
+                    <ListBox  MinHeight="60"/>
                 </GroupBox>
                 <GroupBox Grid.Row="5" Grid.ColumnSpan="2" Header="Zimmer">
-                    <ListBox MinHeight="60"/>
+                    <ListBox ItemsSource="{Binding SelecteBuchung.Zimmer}"
+                             DisplayMemberPath="Nummer"
+                             MinHeight="60"/>
                 </GroupBox>
             </Grid>
         </Grid>

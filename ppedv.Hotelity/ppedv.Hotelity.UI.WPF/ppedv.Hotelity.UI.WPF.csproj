@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\ppedv.Hotelity.Data.EfCore\ppedv.Hotelity.Data.EfCore.csproj" />
+    <ProjectReference Include="..\ppedv.Hotelity.Logging\ppedv.Hotelity.Logging.csproj" />
+    <ProjectReference Include="..\ppedv.Hotelity.Logic\ppedv.Hotelity.Logic.csproj" />
+    <ProjectReference Include="..\ppedv.Hotelity.Model\ppedv.Hotelity.Model.csproj" />
   </ItemGroup>
 
 </Project>
