@@ -6,8 +6,8 @@
         public DateTime? Von { get; set; }
         public DateTime? Bis { get; set; }
 
-        public ICollection<Zimmer> Zimmer { get; set; } = new HashSet<Zimmer>();
+        public virtual ICollection<Zimmer> Zimmer { get; set; } = new HashSet<Zimmer>();
 
-        public Gast? Gast { get; set; }
+        public virtual Gast? Gast { get; set; }
     }
 }

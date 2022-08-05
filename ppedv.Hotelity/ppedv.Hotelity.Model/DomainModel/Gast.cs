@@ -6,7 +6,7 @@
 
         public DateTime? GebDatum { get; set; }
 
-        public ICollection<Buchung> Buchung { get; set; } = new HashSet<Buchung>();
+        public virtual ICollection<Buchung> Buchung { get; set; } = new HashSet<Buchung>();
 
     }
 }

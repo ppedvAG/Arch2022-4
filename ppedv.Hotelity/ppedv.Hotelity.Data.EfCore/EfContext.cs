@@ -27,7 +27,7 @@ namespace ppedv.Hotelity.Data.EfCore
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(conString);
+            optionsBuilder.UseLazyLoadingProxies().UseSqlServer(conString);
         }
 
     }

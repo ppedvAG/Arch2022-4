@@ -6,7 +6,7 @@
         public int AnzBetten { get; set; }
 
         //public ICollection<Gast> Gaeste { get; set; } = new HashSet<Gast>();
-        public ICollection<Buchung> Buchung { get; set; } = new HashSet<Buchung>();
+        public virtual ICollection<Buchung> Buchung { get; set; } = new HashSet<Buchung>();
 
     }
 }
