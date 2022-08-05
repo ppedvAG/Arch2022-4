@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using ppedv.Hotelity.Model.Contracts;
+using ppedv.Hotelity.Model.Contracts.Infrastructure;
 using ppedv.Hotelity.Model.DomainModel;
 
 namespace ppedv.Hotelity.Logic.Tests

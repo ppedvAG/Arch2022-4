@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ppedv.Hotelity.Model.Contracts;
+using ppedv.Hotelity.Model.Contracts.Infrastructure;
 using ppedv.Hotelity.Model.DomainModel;
 
 namespace ppedv.Hotelity.Data.EfCore

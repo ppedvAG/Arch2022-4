@@ -1,6 +1,6 @@
 using ppedv.Hotelity.Data.EfCore;
 using ppedv.Hotelity.Logging;
-using ppedv.Hotelity.Model.Contracts;
+using ppedv.Hotelity.Model.Contracts.Infrastructure;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

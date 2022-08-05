@@ -3,20 +3,10 @@ using Moq;
 using ppedv.Hotelity.Model.Contracts.Infrastructure;
 using ppedv.Hotelity.Model.DomainModel;
 
-namespace ppedv.Hotelity.Logic.Tests
+namespace ppedv.Hotelity.Services.RoomService.Tests
 {
-    public class CoreTests
+    public class RoomServiceTests
     {
-        [Fact]
-        public void GetAvailableRooms_3_rooms_1_is_booked_results_2_rooms()
-        {
-            var core = new Core(new TestUnitOfWork());
-
-            var result = core.GetAvailableRooms(DateTime.Now);
-
-            result.Should().HaveCount(2);
-        }
-
         [Fact]
         public void GetAvailableRooms_3_rooms_1_is_booked_results_2_rooms_moq()
         {
@@ -34,9 +24,9 @@ namespace ppedv.Hotelity.Logic.Tests
             var uowMock = new Mock<IMainRepository>();
             uowMock.Setup(x => x.GetRepo<Zimmer>()).Returns(() => repoMock.Object);
 
-            var core = new Core(uowMock.Object);
+            var roomService = new RoomService(uowMock.Object);
 
-            var result = core.GetAvailableRooms(DateTime.Now);
+            var result = roomService.GetAvailableRooms(DateTime.Now);
 
             result.Should().HaveCount(2);
         }

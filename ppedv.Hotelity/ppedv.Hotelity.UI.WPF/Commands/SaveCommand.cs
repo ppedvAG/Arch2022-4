@@ -1,4 +1,4 @@
-﻿using ppedv.Hotelity.Model.Contracts;
+﻿using ppedv.Hotelity.Model.Contracts.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;

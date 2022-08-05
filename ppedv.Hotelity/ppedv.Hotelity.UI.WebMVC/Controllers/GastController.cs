@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ppedv.Hotelity.Logic;
-using ppedv.Hotelity.Model.Contracts;
+using ppedv.Hotelity.Model.Contracts.Infrastructure;
 using ppedv.Hotelity.Model.DomainModel;
 
 

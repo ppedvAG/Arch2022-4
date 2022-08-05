@@ -1,6 +1,6 @@
 ﻿using ppedv.Hotelity.Model.DomainModel;
 
-namespace ppedv.Hotelity.Model.Contracts
+namespace ppedv.Hotelity.Model.Contracts.Infrastructure
 {
     /// <summary>
     /// Unit-of-Work implementierung, aber MainRepo genannt zum besseren klarheit

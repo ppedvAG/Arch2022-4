@@ -1,6 +1,6 @@
 ﻿using ppedv.Hotelity.Model.DomainModel;
 
-namespace ppedv.Hotelity.Model.Contracts
+namespace ppedv.Hotelity.Model.Contracts.Infrastructure
 {
     public interface IRepository<T> where T : Entity
     {
