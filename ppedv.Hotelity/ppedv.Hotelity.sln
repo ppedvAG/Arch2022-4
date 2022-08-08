@@ -41,19 +41,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{428F06EC-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{2984793B-AD97-46FD-81B9-1B58F66CFB6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.UI.WPF", "ppedv.Hotelity.UI.WPF\ppedv.Hotelity.UI.WPF.csproj", "{4B928CA8-AE43-4E3E-AE39-E336A5E869B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Hotelity.UI.WPF", "ppedv.Hotelity.UI.WPF\ppedv.Hotelity.UI.WPF.csproj", "{4B928CA8-AE43-4E3E-AE39-E336A5E869B4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5273551B-7DB5-4D60-BB96-22F0AECD4FFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.Services.BookingService", "ppedv.Hotelity.Services.BookingService\ppedv.Hotelity.Services.BookingService.csproj", "{D2F79316-7FBA-449E-A40C-E870C1C2F896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Hotelity.Services.BookingService", "ppedv.Hotelity.Services.BookingService\ppedv.Hotelity.Services.BookingService.csproj", "{D2F79316-7FBA-449E-A40C-E870C1C2F896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.Services.RoomService", "ppedv.Hotelity.Services.RoomService\ppedv.Hotelity.Services.RoomService.csproj", "{CBF01CFA-4EFA-4BFF-8931-10BEF57A1EA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Hotelity.Services.RoomService", "ppedv.Hotelity.Services.RoomService\ppedv.Hotelity.Services.RoomService.csproj", "{CBF01CFA-4EFA-4BFF-8931-10BEF57A1EA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.Services.RoomService.Tests", "ppedv.Hotelity.Services.RoomService.Tests\ppedv.Hotelity.Services.RoomService.Tests.csproj", "{C72092D3-CD5A-4DCF-B031-DD7540F90155}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Hotelity.Services.RoomService.Tests", "ppedv.Hotelity.Services.RoomService.Tests\ppedv.Hotelity.Services.RoomService.Tests.csproj", "{C72092D3-CD5A-4DCF-B031-DD7540F90155}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookingService", "BookingService", "{C222E57A-D8CE-43FB-B902-21771A756404}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RoomService", "RoomService", "{A6F6D3EB-676F-43C8-BC4B-9247ED8A9075}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoService", "DemoService", "{19E29B60-2074-48B3-8714-96B96A42AF2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.Services.DemoService", "ppedv.Hotelity.Services.DemoService\ppedv.Hotelity.Services.DemoService.csproj", "{7CEE03CA-475D-4923-94A2-2D6359612841}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +113,10 @@ Global
 		{C72092D3-CD5A-4DCF-B031-DD7540F90155}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C72092D3-CD5A-4DCF-B031-DD7540F90155}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C72092D3-CD5A-4DCF-B031-DD7540F90155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CEE03CA-475D-4923-94A2-2D6359612841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CEE03CA-475D-4923-94A2-2D6359612841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CEE03CA-475D-4923-94A2-2D6359612841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CEE03CA-475D-4923-94A2-2D6359612841}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +144,8 @@ Global
 		{C72092D3-CD5A-4DCF-B031-DD7540F90155} = {A6F6D3EB-676F-43C8-BC4B-9247ED8A9075}
 		{C222E57A-D8CE-43FB-B902-21771A756404} = {5273551B-7DB5-4D60-BB96-22F0AECD4FFE}
 		{A6F6D3EB-676F-43C8-BC4B-9247ED8A9075} = {5273551B-7DB5-4D60-BB96-22F0AECD4FFE}
+		{19E29B60-2074-48B3-8714-96B96A42AF2D} = {5273551B-7DB5-4D60-BB96-22F0AECD4FFE}
+		{7CEE03CA-475D-4923-94A2-2D6359612841} = {19E29B60-2074-48B3-8714-96B96A42AF2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {405C34D9-E936-49EA-AC28-226F08D4DCF8}

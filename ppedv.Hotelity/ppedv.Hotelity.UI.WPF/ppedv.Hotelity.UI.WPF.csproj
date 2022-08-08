@@ -16,6 +16,7 @@
     <ProjectReference Include="..\ppedv.Hotelity.Logging\ppedv.Hotelity.Logging.csproj" />
     <ProjectReference Include="..\ppedv.Hotelity.Logic\ppedv.Hotelity.Logic.csproj" />
     <ProjectReference Include="..\ppedv.Hotelity.Model\ppedv.Hotelity.Model.csproj" />
+    <ProjectReference Include="..\ppedv.Hotelity.Services.DemoService\ppedv.Hotelity.Services.DemoService.csproj" />
   </ItemGroup>
 
 </Project>

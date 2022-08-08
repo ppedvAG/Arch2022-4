@@ -16,6 +16,7 @@
             <Button Command="{Binding SaveCommand2}">Save2</Button>
             <Button>New</Button>
             <Button>Delete</Button>
+            <Button Command="{Binding DemoCommand}">Demo</Button>
         </StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -62,7 +63,7 @@
                 <Label Grid.Row="2">Bis</Label>
                 <DatePicker SelectedDate="{Binding SelecteBuchung.Bis}" Grid.Row="2" Grid.Column="1"/>
                 <Label Grid.Row="3">Hauptgast</Label>
-                <TextBlock Text="{Binding SelecteBuchung.Gast.Name}" Grid.Row="3" Grid.Column="1"/>
+                <TextBlock Text="{Binding HauptGastName}" Grid.Row="3" Grid.Column="1"/>
                 <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Header="Gäste">
                     <ListBox MinHeight="60"/>
                 </GroupBox>
