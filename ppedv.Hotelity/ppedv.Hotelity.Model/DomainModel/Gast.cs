@@ -1,5 +1,6 @@
 ﻿namespace ppedv.Hotelity.Model.DomainModel
 {
+    //POCO = Plain Old CLR Object
     public class Gast : Entity
     {
         public string Name { get; set; } = string.Empty;

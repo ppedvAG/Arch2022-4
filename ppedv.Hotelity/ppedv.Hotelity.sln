@@ -59,6 +59,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoService", "DemoService"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.Services.DemoService", "ppedv.Hotelity.Services.DemoService\ppedv.Hotelity.Services.DemoService.csproj", "{7CEE03CA-475D-4923-94A2-2D6359612841}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Hotelity.Validation", "ppedv.Hotelity.Validation\ppedv.Hotelity.Validation.csproj", "{8A67EA99-47FF-4771-BB41-3F20927C8881}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{7CEE03CA-475D-4923-94A2-2D6359612841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CEE03CA-475D-4923-94A2-2D6359612841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CEE03CA-475D-4923-94A2-2D6359612841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A67EA99-47FF-4771-BB41-3F20927C8881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A67EA99-47FF-4771-BB41-3F20927C8881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A67EA99-47FF-4771-BB41-3F20927C8881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A67EA99-47FF-4771-BB41-3F20927C8881}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{A6F6D3EB-676F-43C8-BC4B-9247ED8A9075} = {5273551B-7DB5-4D60-BB96-22F0AECD4FFE}
 		{19E29B60-2074-48B3-8714-96B96A42AF2D} = {5273551B-7DB5-4D60-BB96-22F0AECD4FFE}
 		{7CEE03CA-475D-4923-94A2-2D6359612841} = {19E29B60-2074-48B3-8714-96B96A42AF2D}
+		{8A67EA99-47FF-4771-BB41-3F20927C8881} = {EB32248A-AA95-45B4-8F96-3DF6575D0320}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {405C34D9-E936-49EA-AC28-226F08D4DCF8}

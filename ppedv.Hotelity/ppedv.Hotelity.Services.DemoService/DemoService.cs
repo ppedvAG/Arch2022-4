@@ -1,8 +1,6 @@
 ﻿using Bogus;
-using Microsoft.VisualBasic;
 using ppedv.Hotelity.Model.Contracts.Services;
 using ppedv.Hotelity.Model.DomainModel;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ppedv.Hotelity.Services.DemoService
 {

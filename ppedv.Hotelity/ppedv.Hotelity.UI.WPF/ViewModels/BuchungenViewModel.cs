@@ -1,12 +1,17 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.VisualBasic;
+using ppedv.Hotelity.Logging;
 using ppedv.Hotelity.Logic;
+using ppedv.Hotelity.Model.Contracts;
 using ppedv.Hotelity.Model.Contracts.Services;
 using ppedv.Hotelity.Model.DomainModel;
 using ppedv.Hotelity.Services.DemoService;
 using ppedv.Hotelity.UI.WPF.Commands;
+using ppedv.Hotelity.Validation;
+using Serilog;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -19,6 +24,7 @@ namespace ppedv.Hotelity.UI.WPF.ViewModels
         //todo di !!!!
         Core core = new Core(new Data.EfCore.EfMainRepository());
         IDemoService demoService = new DemoService();
+        IValidationService validationService = new ValidationService();
 
         public ObservableCollection<Buchung> Buchungen { get; set; }
 
@@ -61,7 +67,20 @@ namespace ppedv.Hotelity.UI.WPF.ViewModels
             Buchungen = new ObservableCollection<Buchung>(core.UnitOfWork.BuchungenRepository.Query().ToList());
 
             SaveCommand = new SaveCommand(core.UnitOfWork);
-            SaveCommand2 = new RelayCommand(() => core.UnitOfWork.SaveAll());
+            SaveCommand2 = new RelayCommand(() =>
+            {
+                var gäste = Buchungen.Select(x => x.Gast).Distinct().ToList();
+                var valiResult = new List<ValidationResult>();
+                foreach (var g in gäste)
+                {
+                    valiResult.AddRange(validationService.Validate(g));     
+                }
+
+                var msg = string.Join("\n", valiResult.Select(x => $"{x.Status} {x.ErrorText}"));
+                Logger.Log.Information(msg);
+
+                core.UnitOfWork.SaveAll();
+            });
 
             DemoCommand = new RelayCommand(() => UserWantsToCreateDemoData());
         }
